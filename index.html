@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bangal Food - Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🍛 Bangal Food</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="order-management.html">Order</a></li>
+        <li><a href="menu-management.html">Menu</a></li>
+        <li><a href="table-reservation.html">Reservation</a></li>
+        <li><a href="billing-payment.html">Billing</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="customer-loyalty.html">Loyalty</a></li>
+      </ul>
+    </nav>
+
+    <!-- ✅ Login/Create Buttons -->
+    <div class="auth-buttons">
+      <button onclick="openForm('login')">🔐 Login</button>
+      <button onclick="openForm('signup')">📝 Create Account</button>
+    </div>
+  </header>
+
+  <!-- 🔁 Hero Slider -->
+  <section class="hero-slider">
+    <div class="slides">
+      <img src="images/slide1.jpg" alt="Bangal Combo 1">
+      <img src="images/slide2.jpg" alt="Bangal Combo 2">
+      <img src="images/slide3.jpg" alt="Bangal Combo 3">
+    </div>
+    <div class="overlay-text">
+      <h2>Welcome to Bangal Food</h2>
+      <p>Traditional Taste, Modern Twist 🍲</p>
+    </div>
+  </section>
+
+  <!-- 🔥 Combo Section -->
+  <section class="combo-slider">
+    <h2>🔥 Combo & Discount Items</h2>
+    <div class="slider" id="comboSlider">
+      <!-- Items loaded by JS -->
+    </div>
+  </section>
+
+  <!-- 📍 Location Section -->
+  <section class="location-section">
+    <h2>📍 Visit Us</h2>
+    <p>We are located in the heart of Kolkata, serving authentic Bangal delicacies. Behind the Sultan's Dine Rajshahi</p>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3634.3618537536872!2d88.60211009999999!3d24.368712400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbef007ac265ab%3A0xe598b3b6359072f2!2sSultan&#39;s%20Dine%20-%20Rajshahi!5e0!3m2!1sen!2sin!4v1752335022890!5m2!1sen!2sin"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- 🌟 Review Form -->
+  <section class="review-section">
+    <h2>🌟 Leave a Review</h2>
+    <p>We value your feedback! Share your experience with Bangal Food.</p>
+    <form action="https://formspree.io/f/mblklpno" method="POST" class="review-form">
+      <input type="text" name="reviewer_name" placeholder="Your Name" required />
+      <select name="rating" required>
+        <option value="">⭐ Rating</option>
+        <option value="5 Stars">5 Stars ⭐⭐⭐⭐⭐</option>
+        <option value="4 Stars">4 Stars ⭐⭐⭐⭐</option>
+        <option value="3 Stars">3 Stars ⭐⭐⭐</option>
+        <option value="2 Stars">2 Stars ⭐⭐</option>
+        <option value="1 Star">1 Star ⭐</option>
+      </select>
+      <textarea name="review_message" rows="4" placeholder="Write your review..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <!-- Sample Reviews -->
+    <div class="review-display">
+      <h3>What Our Customers Say</h3>
+      <div class="review-card">
+        <strong>👤 Riya Das</strong>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"Absolutely loved the Chicken Bhuna combo! Authentic taste just like home."</p>
+      </div>
+      <div class="review-card">
+        <strong>👤 Imran Hossain</strong>
+        <p>⭐⭐⭐⭐</p>
+        <p>"Fast service, fresh food, and excellent atmosphere. Must visit!"</p>
+      </div>
+      <div class="review-card">
+        <strong>👤 Nusrat Jahan</strong>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"The fish curry was amazing! Reminded me of my grandmother's cooking."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ WhatsApp Floating Button -->
+  <a href="https://wa.me/919635192398" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp Chat">
+  </a>
+
+  <!-- ✅ Login & Signup Popup Form -->
+  <div id="authPopup" class="auth-popup">
+    <div class="auth-form-container">
+      <span class="close-btn" onclick="closeForm()">×</span>
+      <h2 id="formTitle">Login</h2>
+      <form id="authForm" action="https://formspree.io/f/mblklpno" method="POST">
+        <input type="hidden" name="_subject" value="New User Auth Submission" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Gmail" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2020 Bangal Food. All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
